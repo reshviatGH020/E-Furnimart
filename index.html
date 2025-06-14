@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-FURNIMART</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="ef.png">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+
+    <div class="container">
+      <a class="logo" href="#">E-Furnimart<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </div>
+    
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2 class="ad">Introducing you.....</h2>
+        <h1>Modern Interior <span>Stylized COUCH</span></h1>
+        <p>The displayed product here will be provided for a certain discount and the offer is valid till 23 April 2025.</p>
+        <a href="shop.html" class="btn">Shop Now</a>
+      </div>
+      <div class="hero-img">
+        <img src="images/blue couch.png" alt="Blue Couch">
+      </div>
+    </div>
+  </header>
+
+  <section class="products">
+    <div class="container">
+      <div class="intro">
+        <h2>Crafted with excellent material.</h2>
+        <p>Designed with modern comforting cloth type rejuvenating your everlasting relaxation experience unseen before.....</p>
+      </div>
+      <div class="product-grid">
+        <div class="product-item">
+          <a href="shop.html">
+          <img src="images/product-1.png" alt="Nordic Chair">
+          <h3>Nordic Chair</h3>
+          <strong>Rs.2,290.00</strong>
+          </a>
+        </div>
+        <div class="product-item">
+          <a href="shop.html">
+          <img src="images/product-2.png" alt="Kruzo Aero Chair">
+          <h3>Kruzo Aero Chair</h3>
+          <strong>Rs.2,490.00</strong>
+          </a>
+        </div>
+        <div class="product-item">
+          <a href="shop.html">
+          <img src="images/product-3.png" alt="Ergonomic Chair">
+          <h3>Ergonomic Chair</h3>
+          <strong>Rs.2,750.00</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="we-help">
+    <div class="container help-content">
+        <img src="images/img-grid-1.jpg" class="image1" alt="Grid 1">
+        <img src="images/img-grid-2.jpg" class="image2" alt="Grid 2">
+        <img src="images/img-grid-3.jpg" class="image3" alt="Grid 3">
+      </div>
+      <div class="help-text">
+        <h1 style="font-size:40px">We Help You Make Modern Interior Design</h1>
+        <p style="font-size:18px">Designed with modern comforting cloth type rejuvenating your everlasting relaxation<br>experience unseen before.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+  <div class="container">
+    <h2>Testimonials</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial active">
+        <p>"From the moment I walked in, I felt like I was in a Pinterest board come to life. Absolute aesthetic goals!"</p>
+        <img src="images/person-1.png" alt="Maria Jones">
+        <h4>Maria Jones</h4>
+        <span>Manager, XYZ Inc.</span>
+      </div>
+      <div class="testimonial">
+        <p>"Exceptional service, cozy designs, and prices that didn’t scare me away. What more can you ask for?"</p>
+        <img src="images/person_2.jpg" alt="Johannes Guttenburg">
+        <h4>Johannes Guttenburg</h4>
+        <span>CEO, XYZ Inc.</span>
+      </div>
+      <div class="testimonial">
+        <p>"Who knew furniture shopping could be this exciting? Love every inch of my new reading nook!"</p>
+        <img src="images/person_3.jpg" alt="Manoj Yogannath">
+        <h4>Manoj Yogannath</h4>
+        <span>Vice Manager, XYZ Inc.</span>
+      </div>
+    </div>
+    
+    <br>
+    
+    <div class="testimonial-controls">
+      <button id="prev">&#8592;</button>
+      <button id="next">&#8594;</button>
+    </div>
+  </div>
+
+
+  <script>
+    const testimonials = document.querySelectorAll('.testimonial');
+    let current = 0;
+
+    function showTestimonial(index) {
+      testimonials.forEach((testimonial, i) => {
+        if (i === index) {
+          testimonial.classList.add('active');
+        } else {
+          testimonial.classList.remove('active');
+        }
+      });
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+      current = (current - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(current);
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      current = (current + 1) % testimonials.length;
+      showTestimonial(current);
+    });
+
+    setInterval(() => {
+      current = (current + 1) % testimonials.length;
+      showTestimonial(current);
+    }, 6000);
+</script>
+
+  
+</section>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-content grid-layout">
+
+      <div class="footer-column">
+        <h3>FOR FURTHER DETAILS :</h3>
+        <ul type="none">
+          <li><img src="icons/icons8-phone-15.png" width="15px" height="15px"> +94 77 1234 567</li>
+          <li><img src="icons/icons8-mail-15.png" width="15px" height="15px"> info@e-furnimart.com</li>
+          <li><img src="icons/icons8-survey-20.png" width="15px" height="15px"> Corporate Inquiry</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>QUICK LINKS</h3>
+        <ul type="none">
+          <li><a href="#navbar">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column column3">
+        <h3>Get connected with us socially on:</h3>
+        <div class="social-links">
+          <a href="#"><img src="icons/icons8-facebook-40.png" width="25" height="25" alt="Facebook"></a>
+          <a href="#"><img src="icons/icons8-whatsapp-40.png" width="25" height="25" alt="X"></a>
+          <a href="#"><img src="icons/icons8-youtube-40.png" width="25" height="25" alt="YouTube"></a>
+          <a href="#"><img src="icons/icons8-linkedin-40.png" width="25" height="25" alt="LinkedIn"></a>
+        </div>
+      </div>
+
+    </div>
+    <p class="copyright end-align">&copy;<script>document.write(new Date().getFullYear());</script> E-Furnimart. Developed at WEBbuilders</p>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+  <script src="menu.js"></script>
+
+</body>
+</html>
